@@ -1,5 +1,5 @@
 class Game
-  attr_reader :choices, :options
+  attr_reader :options
   def initialize(options)
     @options = options
     @player1 = options.keys[0]
