@@ -7,7 +7,31 @@
   <title>Document</title>
 </head>
 <body>
-    <%= @player_one.name %>
-    <%= @player_two.name %>
+  <% if @player_two.name != 'computer' %>
+    <form action="play" method="get">
+      <label for="player_one"> <%= @player_one.name %> </label>
+      <input type="submit" name="player_one" value="rock">
+      <input type="submit" name="player_one" value="paper">
+      <input type="submit" name="player_one" value="scissors">
+
+      <label for="player_one"> <%= @player_two.name %></label>
+      <input type="submit" name="player_one" value="rock">
+      <input type="submit" name="player_one" value="paper">
+      <input type="submit" name="player_one" value="scissors">
+    </form>
+  <% end %>
+
+  <% if @player_two.name == 'computer' %>
+    <form action="play" method="get">
+      <div>
+        <label for="player_one"> Player One: </label>
+        <input type="submit" name="player_one" value="rock">
+        <input type="submit" name="player_one" value="paper">
+        <input type="submit" name="player_one" value="scissors">
+        <br>
+        <label for="player_two"> Computer: </label>
+        <input type="hidden" id='computer' name="computer-input" value=<%= ['rock', 'paper', 'scissors'].sample %>
+      </div>
+  <% end %>
 </body>
 </html>
