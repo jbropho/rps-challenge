@@ -6,4 +6,8 @@ class RPSapp < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  post '/names' do
+    p "#{params}"
+  end
 end
