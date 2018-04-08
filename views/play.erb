@@ -7,31 +7,16 @@
   <title>Document</title>
 </head>
 <body>
-  <% if @player_two.name != 'computer' %>
-    <form action="play" method="get">
-      <label for="player_one"> <%= @player_one.name %> </label>
-      <input type="submit" name="player_one" value="rock">
-      <input type="submit" name="player_one" value="paper">
-      <input type="submit" name="player_one" value="scissors">
-
-      <label for="player_one"> <%= @player_two.name %></label>
-      <input type="submit" name="player_one" value="rock">
-      <input type="submit" name="player_one" value="paper">
-      <input type="submit" name="player_one" value="scissors">
-    </form>
+  <% if @game %>
+    <h2><%= "#{@game.victor} wins!"%> </h2>
   <% end %>
+  <br>
 
-  <% if @player_two.name == 'computer' %>
-    <form action="play" method="get">
-      <div>
-        <label for="player_one"> Player One: </label>
-        <input type="submit" name="player_one" value="rock">
-        <input type="submit" name="player_one" value="paper">
-        <input type="submit" name="player_one" value="scissors">
-        <br>
-        <label for="player_two"> Computer: </label>
-        <input type="hidden" id='computer' name="computer-input" value=<%= ['rock', 'paper', 'scissors'].sample %>
-      </div>
-  <% end %>
+  <form action="play" method="post">
+    <label for="player_one"> <%= @player_one.name %> </label>
+    <input type="submit" name="p1" value="rock">
+    <input type="submit" name="p1" value="paper">
+    <input type="submit" name="p1" value="scissors">
+  </form>
 </body>
 </html>
