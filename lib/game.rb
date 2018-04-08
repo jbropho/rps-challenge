@@ -1,5 +1,5 @@
 class Game
-  attr_reader :options
+  attr_reader :options, :victor
   def initialize(options)
     @options = options
     @player1 = options.keys[0]
@@ -7,8 +7,9 @@ class Game
   end
 
   def determine_winner
-    return :draw if draw?
-    winner
+    @victor = winner.name
+    @victor = 'nobody' if draw?
+    @victor
   end
 
   private
