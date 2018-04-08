@@ -2,7 +2,6 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/ai_opponent'
-require 'pry'
 
 class RPSapp < Sinatra::Base
   enable :sessions
