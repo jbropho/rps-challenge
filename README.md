@@ -8,18 +8,18 @@
 Ruby - Rspec - Sinatra - Capybara
 
 ## Setup
-      ```
-      $ git clone https://github.com/jbropho/rps-challenge
-      $ cd rps-challenge
-      $ bundle install
-      $ rackup -p 9292
-      visit localhost:9292/play_ai
-      enter a player name and press submit
-      ```
+
+        $ git clone https://github.com/jbropho/rps-challenge
+        $ cd rps-challenge
+        $ bundle install
+        $ rackup -p 9292
+        visit localhost:9292/play_ai
+        enter a player name and press submit
+
 ## Testing
-  ```
-  $ rspec
-  ```
+        
+        $ rspec
+
 
 ## Approach
 I approached this task by trying to create a design which would allow me to implement single
