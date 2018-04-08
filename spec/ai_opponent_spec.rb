@@ -6,4 +6,9 @@ describe AiOpponent do
       expect([:rock, :paper, :scissors]).to include subject.choice
     end
   end
+  describe '.name' do
+    it 'returns String(computer)' do
+      expect(subject.name).to eq 'computer'
+    end
+  end
 end
