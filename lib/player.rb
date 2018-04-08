@@ -1,7 +1,7 @@
 class Player
-  attr_accessor :name, :score
+  attr_reader :name
+  attr_accessor :choice
   def initialize(name)
     @name = name
-    @score = 0 
   end
 end
