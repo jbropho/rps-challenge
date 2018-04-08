@@ -1,9 +1,8 @@
 class Game
-  attr_reader :options, :victor
-  def initialize(options)
-    @options = options
-    @player1 = options.keys[0]
-    @player2 = options.keys[1]
+  attr_reader :player1, :player2, :victor
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
   def determine_winner
@@ -14,14 +13,14 @@ class Game
 
   private
   def draw?
-     options[@player1] == options[@player2]
+     player1.choice == player2.choice
   end
 
   def winner
-    case options[@player1]
-    when :rock then options[@player2] == :scissors ? @player1 : @player2
-    when :paper then options[@player2] == :rock ? @player1 : @player2
-    when :scissors then options[@player2] == :paper ? @player1 : @player2
+    case player1.choice
+    when :rock then player2.choice == :scissors ? @player1 : @player2
+    when :paper then player2.choice == :rock ? @player1 : @player2
+    when :scissors then player2.choice == :paper ? @player1 : @player2
     end
   end
 end
